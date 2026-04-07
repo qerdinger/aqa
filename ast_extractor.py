@@ -3,7 +3,7 @@ import json
 
 FILENAME = "sample.py"
 
-class AstExtractor:
+class ASTExtractor:
     def __init__(self, filename: str):
         self.code = open(filename).read()
         self.tree = None
@@ -38,9 +38,9 @@ class AstExtractor:
     
         def as_json(self):
             return json.dumps(self.content, indent=2)
-            
 
-ast_core = AstExtractor(FILENAME).analyze().serialize()
+
+ast_core = ASTExtractor(FILENAME).analyze().serialize()
 
 print(ast_core)
 print(ast_core.as_json())
